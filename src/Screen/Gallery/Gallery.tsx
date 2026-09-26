@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { images } from "../../constent/imageConstent";
 
 const galleryItems = [
@@ -45,6 +46,32 @@ const galleryItems = [
   { image: images.image43 },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const Gallery = () => {
   return (
     <section
@@ -54,10 +81,25 @@ const Gallery = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="inline-block text-xs font-semibold uppercase tracking-[0.3em] text-[#b38a3e]">
+        <motion.div
+          className="mx-auto mb-12 max-w-2xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.span
+            className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b38a3e]"
+            initial={{ opacity: 0, letterSpacing: "0.1em" }}
+            whileInView={{
+              opacity: 1,
+              letterSpacing: "0.3em",
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             Our Collection
-          </span>
+          </motion.span>
 
           <h2 className="mt-3 font-serif text-4xl font-bold text-[#315c3a] sm:text-5xl">
             Designs Made With Love
@@ -67,34 +109,34 @@ const Gallery = () => {
             Explore our beautiful collection of bridal, Arabic,
             traditional and contemporary mehendi designs.
           </p>
-        </div>
+        </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.08,
+          }}
+        >
           {galleryItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="
-                group relative
-                h-[420px]
-                overflow-hidden
-                rounded-3xl
-                bg-[#eee8dc]
-                shadow-sm
-
-                transition-all
-                duration-500
-                ease-out
-
-                hover:-translate-y-3
-                hover:shadow-2xl
-
-                motion-reduce:transform-none
-                motion-reduce:transition-none
-              "
+              //@ts-ignore
+              variants={cardVariants}
+              className="group relative h-[420px] overflow-hidden rounded-3xl bg-[#eee8dc] shadow-sm"
+              whileHover={{
+                y: -10,
+                transition: {
+                  duration: 0.3,
+                },
+              }}
             >
               {/* Image */}
-              <img
+              <motion.img
                 src={item.image}
                 alt={
                   item.title ||
@@ -102,163 +144,88 @@ const Gallery = () => {
                 }
                 loading="lazy"
                 decoding="async"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-
-                  scale-100
-                  transition-transform
-                  duration-700
-                  ease-[cubic-bezier(0.22,1,0.36,1)]
-
-                  group-hover:scale-110
-
-                  motion-reduce:transform-none
-                  motion-reduce:transition-none
-                "
+                className="h-full w-full object-cover"
+                whileHover={{
+                  scale: 1.1,
+                  transition: {
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                }}
               />
 
-              {/* Gradient Overlay */}
-              <div
-                className="
-                  absolute inset-0
-                  bg-gradient-to-t
-                  from-black/80
-                  via-black/20
-                  to-transparent
-
-                  opacity-70
-                  transition-opacity
-                  duration-500
-
-                  group-hover:opacity-100
-                "
+              {/* Gradient */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+                initial={{ opacity: 0.7 }}
+                whileHover={{ opacity: 0.95 }}
+                transition={{ duration: 0.4 }}
               />
 
-              {/* Decorative Circle */}
-              <div
-                className="
-                  absolute left-5 top-5
-                  flex h-12 w-12
-                  items-center justify-center
-                  rounded-full
-                  border border-white/30
-                  bg-white/10
-                  backdrop-blur-md
+              {/* Top decorative glow */}
+              <motion.div
+                className="absolute left-5 top-5 h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md"
+                initial={{ opacity: 0, scale: 0.7 }}
+                whileHover={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{ duration: 0.3 }}
+              />
 
-                  scale-75
-                  opacity-0
-
-                  transition-all
-                  duration-500
-                  ease-out
-
-                  group-hover:scale-100
-                  group-hover:opacity-100
-                "
-              >
-                <span className="text-xl text-white">
-                  ✦
-                </span>
-              </div>
-
-              {/* Bottom Content */}
-              <div
-                className="
-                  absolute bottom-0 left-0 right-0
-                  p-6
-
-                  translate-y-5
-                  opacity-0
-
-                  transition-all
-                  duration-500
-                  ease-out
-
-                  group-hover:translate-y-0
-                  group-hover:opacity-100
-
-                  max-sm:translate-y-0
-                  max-sm:opacity-100
-                "
-              >
-                {/* Design Title */}
-                {item.title && (
-                  <h3
-                    className="
-                      font-serif
-                      text-2xl
-                      font-bold
-                      text-white
-
-                      translate-y-3
-                      transition-transform
-                      duration-500
-
-                      group-hover:translate-y-0
-                    "
-                  >
-                    {item.title}
-                  </h3>
-                )}
-
-                {/* Explore Row */}
-                <div
-                  className={`flex items-center justify-between ${
-                    item.title ? "mt-4" : ""
-                  }`}
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <motion.div
+                  initial={{ y: 15, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <span className="text-sm text-white/80">
-                    Explore design
-                  </span>
+                  {item.title && (
+                    <h3 className="font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                  )}
 
-                  <button
-                    type="button"
-                    aria-label={`Explore ${
-                      item.title || "mehendi design"
+                  <div
+                    className={`flex items-center justify-between ${
+                      item.title ? "mt-4" : ""
                     }`}
-                    className="
-                      flex h-10 w-10
-                      items-center justify-center
-                      rounded-full
-                      bg-[#d0a64a]
-                      text-xl text-white
-                      shadow-lg
-
-                      transition-all
-                      duration-300
-                      ease-out
-
-                      hover:scale-125
-                      hover:-rotate-12
-                      hover:bg-[#b88d35]
-
-                      active:scale-90
-                    "
                   >
-                    →
-                  </button>
-                </div>
+                    <span className="text-sm text-white/75">
+                      Explore design
+                    </span>
+
+                    <motion.button
+                      aria-label={`Explore ${
+                        item.title || "mehendi design"
+                      }`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d0a64a] text-lg text-white shadow-lg"
+                      whileHover={{
+                        scale: 1.15,
+                        rotate: -8,
+                        backgroundColor: "#b88d35",
+                      }}
+                      whileTap={{
+                        scale: 0.9,
+                      }}
+                    >
+                      →
+                    </motion.button>
+                  </div>
+                </motion.div>
               </div>
 
-              {/* Animated Border */}
-              <div
-                className="
-                  pointer-events-none
-                  absolute inset-0
-                  rounded-3xl
-                  border border-transparent
-
-                  transition-colors
-                  duration-500
-
-                  group-hover:border-white/40
-                "
+              {/* Border animation */}
+              <motion.div
+                className="pointer-events-none absolute inset-0 rounded-3xl border border-white/0"
+                whileHover={{
+                  borderColor: "rgba(255,255,255,0.3)",
+                }}
+                transition={{ duration: 0.3 }}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
