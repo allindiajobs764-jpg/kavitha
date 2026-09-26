@@ -125,6 +125,7 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
+              //@ts-ignore
               variants={cardVariants}
               className="group relative h-[420px] overflow-hidden rounded-3xl bg-[#eee8dc] shadow-sm"
               whileHover={{

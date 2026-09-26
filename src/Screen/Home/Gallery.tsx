@@ -109,6 +109,7 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
+              //@ts-ignore
               variants={cardVariants}
               whileHover={{
                 y: -12,
