@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 
 
 const artists = [
@@ -65,7 +66,13 @@ const artists = [
 
 const Artists = () => {
   return (
-    <section className="min-h-screen bg-[#fffdf8]">
+       <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >  
+
+     <section className="min-h-screen bg-[#fffdf8]">
 
       {/* Hero */}
       <div className="relative overflow-hidden bg-[#315c3a]">
@@ -231,6 +238,10 @@ const Artists = () => {
         </div>
       </div>
     </section>
+
+    </motion.div>
+
+   
   );
 };
 

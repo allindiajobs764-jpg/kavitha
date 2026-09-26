@@ -1,6 +1,7 @@
 
-import Artists from "../Artists/Artists"
+// import Artists from "../Artists/Artists"
 import Gallery from "./Gallery"
+
 import Hero from "./Hero"
 
 function Home() {
@@ -8,7 +9,8 @@ function Home() {
     <div>
        <Hero/>
        <Gallery/>
-       <Artists/>
+       
+       {/* <Artists/> */}
     </div>
   )
 }

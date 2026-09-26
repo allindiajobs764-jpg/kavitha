@@ -1,11 +1,16 @@
+
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "../Screen/Home/Home";
 import MainLayout from "../Layout/MainLayout";
-import Artists from "../Screen/Artists/Artists";
-import Designs from "../Screen/Designs/Designs";
-import Packages from "../Screen/Packages/Packages";
-import Gallery from "../Screen/Home/Gallery";
+
+const Home = lazy(() => import("../Screen/Home/Home"));
+const Artists = lazy(() => import("../Screen/Artists/Artists"));
+const Designs = lazy(() => import("../Screen/Designs/Designs"));
+const Packages = lazy(() => import("../Screen/Packages/Packages"));
+const Gallery = lazy(() => import("../Screen/Gallery/Gallery"));
+const Contact = lazy(() => import("../Screen/Contact/Contact"));
+const About = lazy(() => import("../Screen/About/About"));
 
 const AppRouter = createBrowserRouter([
   {
@@ -29,12 +34,21 @@ const AppRouter = createBrowserRouter([
         element: <Packages />,
       },
       {
-        path:"gallery",
-        element:<Gallery/>
+        path: "gallery",
+        element: <Gallery />,
       },
       {
-        
-      }
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "*",
+        element: <Home />,
+      },
     ],
   },
 ]);

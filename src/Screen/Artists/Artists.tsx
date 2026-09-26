@@ -1,64 +1,14 @@
 const artists = [
   {
-    name: "Meera Mehendi",
-    location: "Chennai, Tamil Nadu",
-    experience: "8 Years Experience",
+    name: "Kavitha",
+    location: "Theni, Tamil Nadu",
+    experience: "3 Years Experience",
     rating: "4.9",
     reviews: "128",
     specialty: "Bridal & Traditional",
     image:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    name: "Aishwarya Arts",
-    location: "Coimbatore, Tamil Nadu",
-    experience: "6 Years Experience",
-    rating: "4.8",
-    reviews: "96",
-    specialty: "Arabic & Minimal",
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    name: "Zara Mehendi",
-    location: "Bangalore, Karnataka",
-    experience: "10 Years Experience",
-    rating: "5.0",
-    reviews: "214",
-    specialty: "Bridal & Luxury",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    name: "Divya Henna Art",
-    location: "Madurai, Tamil Nadu",
-    experience: "5 Years Experience",
-    rating: "4.9",
-    reviews: "82",
-    specialty: "Floral & Arabic",
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    name: "Nila Mehendi",
-    location: "Kochi, Kerala",
-    experience: "7 Years Experience",
-    rating: "4.9",
-    reviews: "105",
-    specialty: "Traditional & Bridal",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    name: "Riya Henna Studio",
-    location: "Hyderabad, Telangana",
-    experience: "4 Years Experience",
-    rating: "4.8",
-    reviews: "67",
-    specialty: "Modern & Minimal",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=80",
-  },
+  },  
 ];
 
 const Artists = () => {
@@ -96,7 +46,7 @@ const Artists = () => {
 
         {/* Filters */}
         <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-2">
+          {/* <div className="flex flex-wrap gap-2">
             {[
               "All Artists",
               "Bridal",
@@ -115,14 +65,14 @@ const Artists = () => {
                 {filter}
               </button>
             ))}
-          </div>
+          </div> */}
 
-          <select className="rounded-full border border-[#e3d9c8] bg-white px-5 py-2.5 text-sm text-gray-600 outline-none focus:border-[#315c3a]">
+          {/* <select className="rounded-full border border-[#e3d9c8] bg-white px-5 py-2.5 text-sm text-gray-600 outline-none focus:border-[#315c3a]">
             <option>Sort By</option>
             <option>Top Rated</option>
             <option>Most Experienced</option>
             <option>Most Popular</option>
-          </select>
+          </select> */}
         </div>
 
         {/* Artist Grid */}
@@ -177,7 +127,7 @@ const Artists = () => {
                 </div>
 
                 {/* Info */}
-                <div className="mt-5 flex items-center justify-between border-y border-[#eee5d7] py-4">
+                {/* <div className="mt-5 flex items-center justify-between border-y border-[#eee5d7] py-4">
                   <div>
                     <p className="text-xs text-gray-400">
                       Experience
@@ -197,12 +147,12 @@ const Artists = () => {
                       {artist.reviews}
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Button */}
-                <button className="mt-5 w-full rounded-full bg-[#315c3a] py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#264a2e] hover:shadow-lg">
+                {/* <button className="mt-5 w-full rounded-full bg-[#315c3a] py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#264a2e] hover:shadow-lg">
                   View Artist
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

@@ -7,11 +7,12 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", path: "/" },
-    { label: "Artists", path: "/artists" },
-    { label: "Designs", path: "/designs" },
-    { label: "Packages", path: "/packages" },
     { label: "Gallery", path: "/gallery" },
+    { label: "Artists", path: "/artists" },
+    { label: "Packages", path: "/packages" },
+    // { label: "Designs", path: "/designs" },
     { label: "About Us", path: "/about" },
+    { label: "Contact", path: "/contact" },
   ];
 
   return (
@@ -51,7 +52,7 @@ const Navbar = () => {
           ))}
 
           {/* More Dropdown */}
-          <div className="group relative">
+          {/* <div className="group relative">
             <button
               type="button"
               className="flex items-center gap-1 text-sm font-medium text-[#4d554c] transition hover:text-[#315c3a]"
@@ -88,7 +89,7 @@ const Navbar = () => {
               </Link>
 
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Desktop CTA */}
