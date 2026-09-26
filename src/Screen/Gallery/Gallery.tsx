@@ -55,7 +55,7 @@ const Gallery = () => {
 
         {/* Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b38a3e]">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.3em] text-[#b38a3e]">
             Our Collection
           </span>
 
@@ -75,142 +75,185 @@ const Gallery = () => {
             <div
               key={index}
               className="
-                group
-                relative
+                group relative
                 h-[420px]
                 overflow-hidden
                 rounded-3xl
                 bg-[#eee8dc]
                 shadow-sm
+
                 transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-xl
+                duration-500
+                ease-out
+
+                hover:-translate-y-3
+                hover:shadow-2xl
+
+                motion-reduce:transform-none
+                motion-reduce:transition-none
               "
             >
               {/* Image */}
               <img
                 src={item.image}
-                alt={item.title || `Mehendi design ${index + 1}`}
+                alt={
+                  item.title ||
+                  `Mehendi design ${index + 1}`
+                }
                 loading="lazy"
                 decoding="async"
                 className="
                   h-full
                   w-full
                   object-cover
+
+                  scale-100
                   transition-transform
                   duration-700
-                  ease-out
+                  ease-[cubic-bezier(0.22,1,0.36,1)]
+
                   group-hover:scale-110
+
+                  motion-reduce:transform-none
+                  motion-reduce:transition-none
                 "
               />
 
-              {/* Gradient */}
+              {/* Gradient Overlay */}
               <div
                 className="
-                  absolute
-                  inset-0
+                  absolute inset-0
                   bg-gradient-to-t
                   from-black/80
-                  via-black/10
+                  via-black/20
                   to-transparent
-                  transition-opacity
-                  duration-300
-                  group-hover:opacity-95
-                "
-              />
 
-              {/* Top decorative glow */}
-              <div
-                className="
-                  absolute
-                  left-5
-                  top-5
-                  h-12
-                  w-12
-                  scale-75
-                  rounded-full
-                  border
-                  border-white/20
-                  bg-white/10
-                  opacity-0
-                  backdrop-blur-md
-                  transition-all
-                  duration-300
-                  group-hover:scale-100
+                  opacity-70
+                  transition-opacity
+                  duration-500
+
                   group-hover:opacity-100
                 "
               />
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div
-                  className="
-                    translate-y-4
-                    opacity-0
-                    transition-all
-                    duration-400
-                    group-hover:translate-y-0
-                    group-hover:opacity-100
-                  "
-                >
-                  {item.title && (
-                    <h3 className="font-serif text-2xl font-bold text-white">
-                      {item.title}
-                    </h3>
-                  )}
+              {/* Decorative Circle */}
+              <div
+                className="
+                  absolute left-5 top-5
+                  flex h-12 w-12
+                  items-center justify-center
+                  rounded-full
+                  border border-white/30
+                  bg-white/10
+                  backdrop-blur-md
 
-                  <div
-                    className={`flex items-center justify-between ${
-                      item.title ? "mt-4" : ""
-                    }`}
+                  scale-75
+                  opacity-0
+
+                  transition-all
+                  duration-500
+                  ease-out
+
+                  group-hover:scale-100
+                  group-hover:opacity-100
+                "
+              >
+                <span className="text-xl text-white">
+                  ✦
+                </span>
+              </div>
+
+              {/* Bottom Content */}
+              <div
+                className="
+                  absolute bottom-0 left-0 right-0
+                  p-6
+
+                  translate-y-5
+                  opacity-0
+
+                  transition-all
+                  duration-500
+                  ease-out
+
+                  group-hover:translate-y-0
+                  group-hover:opacity-100
+
+                  max-sm:translate-y-0
+                  max-sm:opacity-100
+                "
+              >
+                {/* Design Title */}
+                {item.title && (
+                  <h3
+                    className="
+                      font-serif
+                      text-2xl
+                      font-bold
+                      text-white
+
+                      translate-y-3
+                      transition-transform
+                      duration-500
+
+                      group-hover:translate-y-0
+                    "
                   >
-                    <span className="text-sm text-white/75">
-                      Explore design
-                    </span>
+                    {item.title}
+                  </h3>
+                )}
 
-                    <button
-                      type="button"
-                      aria-label={`Explore ${
-                        item.title || "mehendi design"
-                      }`}
-                      className="
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-[#d0a64a]
-                        text-lg
-                        text-white
-                        shadow-lg
-                        transition-all
-                        duration-300
-                        hover:scale-110
-                        hover:-rotate-6
-                        hover:bg-[#b88d35]
-                        active:scale-90
-                      "
-                    >
-                      →
-                    </button>
-                  </div>
+                {/* Explore Row */}
+                <div
+                  className={`flex items-center justify-between ${
+                    item.title ? "mt-4" : ""
+                  }`}
+                >
+                  <span className="text-sm text-white/80">
+                    Explore design
+                  </span>
+
+                  <button
+                    type="button"
+                    aria-label={`Explore ${
+                      item.title || "mehendi design"
+                    }`}
+                    className="
+                      flex h-10 w-10
+                      items-center justify-center
+                      rounded-full
+                      bg-[#d0a64a]
+                      text-xl text-white
+                      shadow-lg
+
+                      transition-all
+                      duration-300
+                      ease-out
+
+                      hover:scale-125
+                      hover:-rotate-12
+                      hover:bg-[#b88d35]
+
+                      active:scale-90
+                    "
+                  >
+                    →
+                  </button>
                 </div>
               </div>
 
-              {/* Border */}
+              {/* Animated Border */}
               <div
                 className="
                   pointer-events-none
-                  absolute
-                  inset-0
+                  absolute inset-0
                   rounded-3xl
-                  border
-                  border-transparent
+                  border border-transparent
+
                   transition-colors
-                  duration-300
-                  group-hover:border-white/30
+                  duration-500
+
+                  group-hover:border-white/40
                 "
               />
             </div>
