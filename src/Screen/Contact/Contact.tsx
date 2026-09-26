@@ -47,7 +47,7 @@ ${form.message || "No additional message"}
 Thank you.
     `;
 
-    const whatsappUrl = `https://wa.me/918526716559?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/918610203273?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
@@ -155,7 +155,7 @@ Thank you.
                     </p>
 
                     <a
-                      href="tel:+918526716559"
+                      href="tel:+918610203273"
                       className="mt-1 block text-sm text-white/60 transition hover:text-[#f1d083]"
                     >
                       +91 85267 16559
@@ -177,7 +177,7 @@ Thank you.
                     </p>
 
                     <a
-                      href="https://wa.me/918526716559"
+                      href="https://wa.me/918610203273"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-1 block text-sm text-white/60 transition hover:text-[#f1d083]"

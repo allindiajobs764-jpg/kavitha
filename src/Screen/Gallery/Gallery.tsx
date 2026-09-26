@@ -7,7 +7,7 @@ const galleryItems = [
   { image: images.image3 },
   { title: "Floral Mehendi", image: images.image4 },
   { title: "Traditional Art", image: images.image5 },
-  { image: images.image6 },
+  // { image: images.image6 },
   { image: images.image7 },
   { image: images.image8 },
   { image: images.image9 },

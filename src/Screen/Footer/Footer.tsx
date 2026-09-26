@@ -62,7 +62,7 @@ const Footer = () => {
               </a> */}
 
               <a
-                href="https://wa.me/918526716559"
+                href="https://wa.me/918610203273"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -193,7 +193,7 @@ const Footer = () => {
               </div>
 
               <a
-                href="tel:+918526716559"
+                href="tel:+918610203273"
                 className="flex items-center gap-3 text-sm text-white/65 transition hover:text-[#f1d083]"
               >
                 <Phone size={18} className="text-[#c69b4c]" />
@@ -201,7 +201,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/918526716559"
+                href="https://wa.me/918610203273"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-white/65 transition hover:text-[#f1d083]"

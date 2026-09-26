@@ -63,7 +63,7 @@ const About = () => {
             {/* Experience Badge */}
             <div className="absolute -bottom-6 -right-4 rounded-2xl bg-[#c69b4c] px-6 py-5 text-center text-white shadow-xl sm:-right-6">
               <p className="font-serif text-3xl font-bold">
-                10+
+                3+
               </p>
 
               <p className="text-xs uppercase tracking-wider text-white/80">
@@ -377,7 +377,7 @@ const About = () => {
             </Link>
 
             <a
-              href="https://wa.me/918526716559"
+              href="https://wa.me/918610203273"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-[#315c3a]"

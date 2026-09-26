@@ -163,8 +163,10 @@ const Hero = () => {
             }}
           >
             {/* Book Button */}
-            <motion.a
-              href="#booking"
+            <motion.div
+               onClick={() => {
+                window.location.href = "/packages";
+              }}
               className="rounded-full bg-[#d0a64a] px-7 py-3.5 text-sm font-semibold text-white shadow-lg"
               whileHover={{
                 y: -5,
@@ -180,7 +182,7 @@ const Hero = () => {
               }}
             >
               Book Your Appointment
-            </motion.a>
+            </motion.div>
 
             {/* Gallery Button */}
             <motion.a
