@@ -3,7 +3,7 @@ import { images } from "../../constent/imageConstent";
 import { motion } from "motion/react";
 
 const galleryItems = [
-  { image: images.image6 },
+  { image: images.image44 },    
   { image: images.image7 },
   { image: images.image8 },
   { image: images.image9 },

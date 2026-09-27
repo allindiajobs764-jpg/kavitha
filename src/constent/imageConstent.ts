@@ -41,6 +41,13 @@ import image40 from '../assets/Images/244602.png';
 import image41 from '../assets/Images/32343.png';
 import image42 from '../assets/Images/3434534.png';
 import image43 from '../assets/Images/342342.jpeg';
+import kavitha from '../assets/Images/kavitha.png';
+import image44 from '../assets/Images/88.png';
+import image45 from '../assets/Images/89.jpeg';
+import image46 from '../assets/Images/90.jpeg';
+import image47 from '../assets/Images/91.png';
+import image48 from '../assets/Images/92.png';
+
 
 
 
@@ -88,4 +95,10 @@ export const images = {
     image41,
     image42,
     image43,
+    image44,
+    image45,
+    image46,
+    image47,
+    image48,
+    kavitha
 }

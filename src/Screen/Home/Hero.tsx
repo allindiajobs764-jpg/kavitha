@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import HeroImage from "../../assets/HeroImage.jpg";
+import { images } from "../../constent/imageConstent";
 
 const Hero = () => {
   return (
     <section className="relative min-h-[650px] overflow-hidden">
-
-      {/* Background Image */}
+      {/* ================= BACKGROUND IMAGE ================= */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -19,7 +19,7 @@ const Hero = () => {
         }}
       />
 
-      {/* Overlay */}
+      {/* ================= OVERLAY ================= */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-[#162d1c]/95 via-[#315c3a]/75 to-black/20"
         initial={{ opacity: 0 }}
@@ -27,10 +27,10 @@ const Hero = () => {
         transition={{ duration: 1.2 }}
       />
 
-      {/* Hero Content */}
+      {/* ================= CONTENT ================= */}
       <div className="relative z-10 mx-auto flex min-h-[650px] max-w-7xl items-center px-6 lg:px-8">
-        <div className="max-w-3xl">
-
+        {/* LEFT CONTENT */}
+        <div className="w-full max-w-3xl py-16 lg:w-[55%]">
           {/* Brand Label */}
           <motion.div
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#e6c77a]/40 bg-white/10 px-4 py-2 backdrop-blur-sm"
@@ -39,10 +39,8 @@ const Hero = () => {
             transition={{
               duration: 0.7,
               delay: 0.3,
-              ease: "easeOut",
             }}
           >
-            {/* Pulsing Dot */}
             <motion.span
               className="h-2 w-2 rounded-full bg-[#e6c77a]"
               animate={{
@@ -60,7 +58,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          {/* Brand Name */}
+          {/* Small Title */}
           <motion.p
             className="mb-3 font-serif text-xl font-medium tracking-wide text-[#f4d98b] sm:text-2xl"
             initial={{ opacity: 0, x: -40 }}
@@ -73,7 +71,7 @@ const Hero = () => {
             Theni Mehendi & Makeup Artist
           </motion.p>
 
-          {/* Main Heading */}
+          {/* Heading */}
           <motion.h1
             className="font-serif text-5xl font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 50 }}
@@ -81,12 +79,10 @@ const Hero = () => {
             transition={{
               duration: 0.9,
               delay: 0.6,
-              ease: "easeOut",
             }}
           >
             Beauty
             <br />
-
             <motion.span
               className="inline-block text-[#f1d083]"
               initial={{ opacity: 0, x: -50 }}
@@ -94,7 +90,6 @@ const Hero = () => {
               transition={{
                 duration: 0.8,
                 delay: 0.8,
-                ease: "easeOut",
               }}
             >
               By Kavitha
@@ -111,7 +106,9 @@ const Hero = () => {
               delay: 1,
             }}
           >
-            Enhancing Your Beauty, Creating Beautiful Memories
+            Enhancing Your Beauty, Creating
+            <br className="hidden sm:block" />
+            Beautiful Memories
           </motion.h2>
 
           {/* Description */}
@@ -124,11 +121,11 @@ const Hero = () => {
               delay: 1.15,
             }}
           >
-            Celebrate your special moments with beautifully handcrafted
-            mehendi and professional makeup artistry by Kavitha. From
-            elegant bridal mehendi and Arabic designs to flawless bridal
-            makeup and customized beauty looks, we create a look that
-            makes every occasion truly unforgettable.
+            Celebrate your special moments with beautifully handcrafted mehendi
+            and professional makeup artistry by Kavitha. From elegant bridal
+            mehendi and Arabic designs to flawless bridal makeup and customized
+            beauty looks, we create a look that makes every occasion truly
+            unforgettable.
           </motion.p>
 
           {/* Services */}
@@ -162,9 +159,9 @@ const Hero = () => {
               delay: 1.45,
             }}
           >
-            {/* Book Button */}
-            <motion.div
-               onClick={() => {
+            <motion.button
+              type="button"
+              onClick={() => {
                 window.location.href = "/packages";
               }}
               className="rounded-full bg-[#d0a64a] px-7 py-3.5 text-sm font-semibold text-white shadow-lg"
@@ -172,19 +169,14 @@ const Hero = () => {
                 y: -5,
                 scale: 1.04,
                 backgroundColor: "#b88d35",
-                boxShadow: "0 15px 30px rgba(0,0,0,0.25)",
               }}
               whileTap={{
                 scale: 0.96,
               }}
-              transition={{
-                duration: 0.25,
-              }}
             >
               Book Your Appointment
-            </motion.div>
+            </motion.button>
 
-            {/* Gallery Button */}
             <motion.a
               href="#gallery"
               className="rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm"
@@ -196,9 +188,6 @@ const Hero = () => {
               }}
               whileTap={{
                 scale: 0.96,
-              }}
-              transition={{
-                duration: 0.25,
               }}
             >
               Explore Our Work
@@ -215,50 +204,57 @@ const Hero = () => {
               delay: 1.6,
             }}
           >
-            {/* Stat 1 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <h3 className="font-serif text-2xl font-bold text-white">
-                50+
-              </h3>
-
+            <div>
+              <h3 className="font-serif text-2xl font-bold text-white">50+</h3>
               <p className="mt-1 text-xs uppercase tracking-wider text-white/60">
                 Happy Clients
               </p>
-            </motion.div>
+            </div>
 
-            {/* Stat 2 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <h3 className="font-serif text-2xl font-bold text-white">
-                3+
-              </h3>
-
+            <div>
+              <h3 className="font-serif text-2xl font-bold text-white">3+</h3>
               <p className="mt-1 text-xs uppercase tracking-wider text-white/60">
                 Years Experience
               </p>
-            </motion.div>
+            </div>
 
-            {/* Stat 3 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
+            <div>
               <h3 className="font-serif text-2xl font-bold text-white">
                 Theni
               </h3>
-
               <p className="mt-1 text-xs uppercase tracking-wider text-white/60">
                 Tamil Nadu
               </p>
-            </motion.div>
+            </div>
           </motion.div>
-
         </div>
+
+        {/* ================= KAVITHA IMAGE ================= */}
+        <motion.div
+          className="absolute bottom-20 right-[-200px] hidden h-[800px] w-[52%] lg:block"
+          initial={{
+            opacity: 0,
+            x: 80,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1.2,
+            delay: 0.4,
+            ease: "easeOut",
+          }}
+        >
+          <img
+            src={images.kavitha}
+            alt="Kavitha - Mehendi and Makeup Artist"
+            className="h-full w-full object-contain object-bottom"
+          />
+
+          {/* Green transparent overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-[#315c3a]/8" />
+        </motion.div>
       </div>
 
       {/* Bottom Gradient */}

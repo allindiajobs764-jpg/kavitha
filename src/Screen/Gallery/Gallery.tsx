@@ -2,6 +2,7 @@
 import { images } from "../../constent/imageConstent";
 
 const galleryItems = [
+  { image: images.image46 },
   { image: images.image1 },
   { image: images.image2 },
   { image: images.image3 },
@@ -44,6 +45,10 @@ const galleryItems = [
   { image: images.image41 },
   { image: images.image42 },
   { image: images.image43 },
+  { image: images.image44 },
+  { image: images.image45 },
+  { image: images.image47 },
+  { image: images.image48 },
 ];
 
 const Gallery = () => {

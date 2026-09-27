@@ -1,3 +1,5 @@
+import { images } from "../../constent/imageConstent";
+
 const artists = [
   {
     name: "Kavitha",
@@ -6,9 +8,7 @@ const artists = [
     rating: "4.9",
     reviews: "128",
     specialty: "Bridal & Traditional",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80",
-  },  
+    image:images.kavitha,  },  
 ];
 
 const Artists = () => {
@@ -83,7 +83,7 @@ const Artists = () => {
               className="group overflow-hidden rounded-3xl border border-[#eee5d7] bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               {/* Image */}
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-90 overflow-hidden">
                 <img
                   src={artist.image}
                   alt={artist.name}
